@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: cron-walcl
+  namespace: default
+spec:
+  type: bindings.cron
+  version: v1
+  metadata:
+    # WALCL (Fed Balance Sheet): Released Thursdays at 4:30 PM ET (20:30 UTC)
+    # Cron: minute 30, hour 20 UTC, every Thursday (day 4)
+    - name: schedule
+      value: "30 20 * * 4"
+    - name: route
+      value: "/cron/walcl"
+scopes:
+  - macroindicators

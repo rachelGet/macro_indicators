@@ -1,0 +1,19 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: umcsent-store
+  namespace: default
+spec:
+  type: state.sqlserver
+  version: v1
+  metadata:
+    - name: connectionString
+      value: "server=localhost,1433;user id=sa;password=${PASSWORD_SQL};database=tradingdb;TrustServerCertificate=true;"
+    - name: tableName
+      value: "umcsent"
+    - name: keyType
+      value: "string"
+    - name: keyLength
+      value: "200"
+scopes:
+  - macroindicators

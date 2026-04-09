@@ -1,0 +1,47 @@
+/* ═══════════════════════════════════════════════════════════════
+ *  Macro Indicators — Chart Stylesheet (TradingView dark theme)
+ *  Edit colors here to re-theme the entire app.
+ * ═══════════════════════════════════════════════════════════════ */
+
+QMainWindow {
+    background: #131722;
+}
+
+MacroChartWidget {
+    /* Background */
+    qproperty-colorBg:          #131722;
+    qproperty-colorPanelBg:     #1e222d;
+
+    /* Grid */
+    qproperty-colorGrid:        #2a2e39;
+    qproperty-colorGridSub:     #222630;
+    qproperty-colorAxisLine:    #363a45;
+
+    /* Text */
+    qproperty-colorText:        #787b86;
+    qproperty-colorTextBright:  #d1d4dc;
+
+    /* Crosshair */
+    qproperty-colorCrosshair:   #9598a1;
+    qproperty-colorTooltipBg:   rgba(30, 34, 45, 220);
+    qproperty-colorLabelBg:     #363a45;
+
+    /* CPI series (warm yellow) */
+    qproperty-colorCpiLine:     #f5c518;
+    qproperty-colorCpiFill:     rgba(245, 197, 24, 30);
+
+    /* WALCL series (blue) */
+    qproperty-colorWalclLine:   #42a5f5;
+    qproperty-colorWalclFill:   rgba(66, 165, 245, 30);
+
+    /* UMCSENT series (teal green) */
+    qproperty-colorUmcsentLine: #26a69a;
+    qproperty-colorUmcsentFill: rgba(38, 166, 154, 30);
+
+    /* Data point highlight */
+    qproperty-colorDot:         #ffffff;
+
+    /* Font */
+    qproperty-fontFamily:       "sans-serif";
+    qproperty-fontSize:         11;
+}

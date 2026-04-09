@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: cron-cpi
+  namespace: default
+spec:
+  type: bindings.cron
+  version: v1
+  metadata:
+    # CPI (CPIAUCSL): Released 10th-14th of each month at 8:30 AM ET
+    # Run daily at 8:30 AM ET (12:30 UTC) on days 10-14 of each month
+    - name: schedule
+      value: "30 12 10-14 * *"
+    - name: route
+      value: "/cron/cpi"
+scopes:
+  - macroindicators

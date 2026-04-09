@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: cron-umcsent
+  namespace: default
+spec:
+  type: bindings.cron
+  version: v1
+  metadata:
+    # UMCSENT (Consumer Sentiment): Released last Friday of the month at 10:00 AM ET
+    # Since cron can't express "last Friday", run every Friday at 10:00 AM ET (14:00 UTC)
+    # The app will always fetch latest data; only new observations get persisted
+    - name: schedule
+      value: "0 14 * * 5"
+    - name: route
+      value: "/cron/umcsent"
+scopes:
+  - macroindicators
